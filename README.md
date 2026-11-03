@@ -4,7 +4,8 @@ A summary of learning work with GNS3, packet captures, and Python. This document
 
 ## Cybersecurity case studies
 
-- **[CbS12 — Network attacks](CbS12_NETWORK_ATTACKS.md):** MITRE ATT&CK mapping, Python/PyMongo security scanning, mitmproxy form metadata logging, DNS tunnel forensics in a PCAP, and FOFA/CVE exposure research. All five task files submitted to private GitLab; grading not confirmed.
+- **[CbS11 — Enterprise IT Landscape](CbS11_ENTERPRISE_IT_LANDSCAPE.md):** small-enterprise network topology, IT asset inventory, security zoning, endpoint/network protection and remote access design. Accepted by School 21 (author confirmed); private assessed material is not published.
+- **[CbS12 — Network attacks](CbS12_NETWORK_ATTACKS.md):** MITRE ATT&CK mapping, Python/PyMongo security scanning, mitmproxy form metadata logging, DNS tunnel forensics in a PCAP, and FOFA/CVE exposure research. Accepted by School 21 (author confirmed); private assessed material is not published.
 - **CbS10 — Data channel protection:** HTTPS/TLS, certificate infrastructure, OpenVPN, and isolated CryptoPro labs (details below).
 
 ## Areas represented in local materials
