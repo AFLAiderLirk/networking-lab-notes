@@ -1,6 +1,6 @@
 # CbS12 — Network attacks: educational lab summary
 
-**Context:** independent summary of cybersecurity coursework at School 21. Five task files were committed and pushed to the private GitLab `develop` branch (last observed commit: `2b7c4ac`). This is **not** an official assessment or a claim that the project has passed peer review.
+**Context:** independent summary of cybersecurity coursework at School 21. Five task files were committed and pushed to the private GitLab `develop` branch (last observed commit: `2b7c4ac`). **Status: completed and accepted by School 21**, confirmed by the project author; the private assessment itself is not publicly mirrored.
 
 ## Objective
 
@@ -31,4 +31,4 @@ Kali Linux, Git/GitLab, Python 3, PyMongo, mitmproxy / mitmdump, curl, Wireshark
 
 ## Publication and ethics
 
-This document is an **independent portfolio explanation**, not a mirror of School 21 source materials. Private GitLab contents, original assignment text, challenge flags, raw captures, scripts submitted for school evaluation, credentials, server IPs, tokens, and personal data are intentionally omitted. The lab work does not imply production deployment, commercial pentest experience, or authorization to probe third-party systems.
+This document is an **independent portfolio explanation**, not a mirror of School 21 source materials. Private GitLab contents, original assignment text, challenge flags, raw captures, scripts submitted for school evaluation, credentials, server IPs, tokens, and personal data are intentionally omitted. The lab work does not imply production deployment, commercial pentest experience, or authorization to probe third-party systems. Acceptance of the coursework was confirmed by its author.
