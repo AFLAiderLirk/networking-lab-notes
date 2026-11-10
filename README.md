@@ -1,63 +1,46 @@
-# Networking lab notes
+# Cybersecurity & Networking Labs
 
-A summary of learning work with GNS3, packet captures, and Python. This document is an independent overview, not an official assignment or a verified completion certificate.
+**Linux · Network security · Threat detection · VPN / firewalls · Traffic analysis · GNS3**
 
-## Cybersecurity case studies
+This repository is my **public, independently written portfolio overview** of practical networking and cybersecurity exercises. It goes well beyond GNS3: I have worked with Linux services, protected communications, attack investigation, IDS signatures, behavioral analysis, pfSense and IPsec.
 
-- **[CbS11 — Enterprise IT Landscape](CbS11_ENTERPRISE_IT_LANDSCAPE.md):** small-enterprise network topology, IT asset inventory, security zoning, endpoint/network protection and remote access design. Accepted by School 21 (author confirmed); private assessed material is not published.
-- **[CbS12 — Network attacks](CbS12_NETWORK_ATTACKS.md):** MITRE ATT&CK mapping, Python/PyMongo security scanning, mitmproxy form metadata logging, DNS tunnel forensics in a PCAP, and FOFA/CVE exposure research. Accepted by School 21 (author confirmed); private assessed material is not published.
-- **CbS10 — Data channel protection:** HTTPS/TLS, certificate infrastructure, OpenVPN, and isolated CryptoPro labs (details below).
+## School 21 cybersecurity projects
 
-## Areas represented in local materials
+**The original School 21 projects and submissions are stored in private GitLab repositories.** I do **not** publish the original assignments or solutions here. Several completed projects — covering infrastructure design, investigation of network attacks, threat detection and protected network design — have been **accepted by School 21** (status confirmed by me).
 
-- ARP, IP addressing, and multicast packet inspection.
-- DHCP, DNS, NTP, and SSH lab environments.
-- VLAN, OSPF, EtherChannel, and HSRP topologies.
-- Packet analysis and a Python networking exercise.
+[**Read the complete public overview of what I worked on →**](SCHOOL21_CYBERSECURITY_LABS.md)
 
-## Approach and architecture
+| Area | Practical work and tools |
+| --- | --- |
+| **Secure network design** | Small-enterprise LAN architecture, security zones and DMZ, asset inventory, access restrictions, defense in depth |
+| **Network attack analysis** | MITRE ATT&CK mapping, Python/PyMongo checks, mitmproxy HTTP-form metadata, DNS-tunneling PCAP investigation, FOFA/CVE research |
+| **Threat detection** | YARA binary signatures, Suricata rules and offline PCAP alerts, Python keyboard-timing comparison with pynput/statistics |
+| **VPN and firewall administration** | Two pfSense virtual machines, site-to-site IPsec/IKEv2 tunnel, Phase 1/Phase 2 checks, LAN/IPsec rules, RDP/SSH restrictions, scheduled SMTP, iptables rules |
+| **Protected communication channels** | nginx HTTPS/TLS, certificate infrastructure, OpenVPN/Easy-RSA, TUN interfaces, CryptoPro NGate/CSP and GOST TLS exercises |
+| **Network engineering fundamentals** | GNS3/Cisco IOS, IPv4, VLAN, OSPF, HSRP, EtherChannel, routing, ARP, DHCP, DNS, NTP, SSH, Wireshark/tshark/tcpdump |
 
-The local lab materials use simulated network topologies, captured traffic, text observations, and a Python script. A useful lab workflow is to define an isolated topology, exercise a protocol, inspect the capture, and document observations. Successful outcomes have not yet been independently verified.
+## Selected outcomes
 
-## Portfolio scope
+- Created YARA rules designed to distinguish three supplied binary samples; validated all nine rule-to-file combinations.
+- Developed four Suricata indicators for suspicious TCP, HTTP, ICMP and DNS patterns; tested them against a provided PCAP.
+- Built a basic keyboard-dynamics program to compare inter-keystroke timing between two manual entries.
+- Established an **IPsec VPN between two pfSense instances** and verified the IKE SA and Child SA status.
+- Applied and documented firewall policy for RDP, SSH and SMTP access during a defined time window.
+- Investigated traffic patterns consistent with DNS tunneling and reconstructed evidence from a lab capture.
 
-This repository contains only this independently written summary. Original task statements, answers, topology files, device configurations, captures, internal addresses, and school materials are excluded. Publication rules for the original school work remain unconfirmed.
+These are **educational lab results**, not claims of production readiness or commercial experience.
 
-## Next improvements
+## Repository scope
 
-Create an independent lab using synthetic addresses, document expected and observed traffic, and add reproducible setup instructions after validation.
+- This repo is a **portfolio description**, not a public mirror of school materials.
+- It contains no private source submissions, challenge flags, credentials, VPN keys, network captures or exported configuration files.
+- Original technical work is maintained in **private School 21 GitLab repositories**; the public narrative is intentionally high level.
+- Acceptance of completed School 21 project work is reported by the author; no external grading certificate is reproduced here.
 
+## Other public work
 
-## CbS10 — Data channel protection
-
-Учебный проект Школы 21: защита каналов связи с помощью HTTPS, OpenVPN и CryptoPro NGate. Все четыре задания выполнены и отправлены в приватный GitLab, ветка `develop`. Подтверждение проверки Школой 21 пока не получено.
-
-| Этап | Практическая работа | Результат |
-| --- | --- | --- |
-| HTTPS/TLS | nginx на TCP 443, Wireshark/tshark | Захвачен TLS-трафик, разобраны ClientHello и ServerHello |
-| OpenVPN | Сервер и клиент, UDP 1194, Easy-RSA CA и сертификаты | Настроены TUN-интерфейсы, выполнен захват пакетов tcpdump |
-| CryptoPro NGate | Отдельная VM, сертификаты, средства администрирования | Подготовлен лабораторный шлюз и административный доступ |
-| Windows-клиент | Windows 10 VM, CryptoPro CSP 5.0, браузер с ГОСТ TLS | Выполнен вход в Dashboard NGate, результат зафиксирован в приватном отчёте |
-
-### Архитектура
-
-Это отдельные лабораторные сценарии; схема не означает, что HTTPS или OpenVPN работали через NGate.
-
-```mermaid
-flowchart TB
-  A[Client] -->|TLS / TCP 443| B[nginx]
-  C[OpenVPN client / TUN] <-->|UDP 1194| D[OpenVPN server / TUN]
-  E[Windows 10 VM / CSP 5.0 / GOST TLS browser] -->|Host-Only / GOST TLS| F[CryptoPro NGate VM]
-  F --> G[Administrator Dashboard]
-```
-
-### Практические навыки
-
-- Настройка Linux-сервисов, адресация, TCP/UDP, виртуальные интерфейсы.
-- HTTPS/TLS и анализ начала рукопожатия в Wireshark/tshark.
-- OpenVPN, Easy-RSA, CA, сертификаты и захват трафика tcpdump.
-- CryptoPro NGate, CSP 5.0, ГОСТ TLS и сертификатная аутентификация в учебном стенде.
-- VirtualBox, Windows/Linux VM и Host-Only сети.
-- Git/GitLab: оформление результатов, коммиты, push и проверка синхронизации ветки.
-
-Опубликовано только самостоятельное описание практики. Приватный репозиторий, задания Школы 21, чужие материалы, ключи, сертификаты, пароли, конфигурации, захваты трафика и чувствительные скриншоты сюда не переносятся. Это учебная практика без заявления коммерческого опыта, производственной эксплуатации или независимого аудита.
+- [Webots Mower — C++ robotics prototype](https://github.com/AFLAiderLirk/webots-mower)
+- [AiderKits — Java / Paper plugin](https://github.com/AFLAiderLirk/aiderkits)
+- [AFLQuestBoard — Java / Paper plugin](https://github.com/AFLAiderLirk/AFLQuestBoard)
+- [Cryptography learning notes](https://github.com/AFLAiderLirk/cryptography-learning-notes)
+- [GitHub profile and résumés](https://github.com/AFLAiderLirk)
